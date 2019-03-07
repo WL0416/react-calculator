@@ -24,6 +24,12 @@ ShallowWrapper {
         />,
         <Keypad
           callOperator={[Function]}
+          extraOperators={
+            Array [
+              "^",
+              "sr",
+            ]
+          }
           numbers={
             Array [
               "7",
@@ -43,7 +49,7 @@ ShallowWrapper {
           operators={
             Array [
               "/",
-              "X",
+              "x",
               "-",
               "+",
             ]
@@ -73,6 +79,10 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "callOperator": [Function],
+          "extraOperators": Array [
+            "^",
+            "sr",
+          ],
           "numbers": Array [
             "7",
             "8",
@@ -89,7 +99,7 @@ ShallowWrapper {
           ],
           "operators": Array [
             "/",
-            "X",
+            "x",
             "-",
             "+",
           ],
@@ -115,6 +125,12 @@ ShallowWrapper {
           />,
           <Keypad
             callOperator={[Function]}
+            extraOperators={
+              Array [
+                "^",
+                "sr",
+              ]
+            }
             numbers={
               Array [
                 "7",
@@ -134,7 +150,7 @@ ShallowWrapper {
             operators={
               Array [
                 "/",
-                "X",
+                "x",
                 "-",
                 "+",
               ]
@@ -164,6 +180,10 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "callOperator": [Function],
+            "extraOperators": Array [
+              "^",
+              "sr",
+            ],
             "numbers": Array [
               "7",
               "8",
@@ -180,7 +200,7 @@ ShallowWrapper {
             ],
             "operators": Array [
               "/",
-              "X",
+              "x",
               "-",
               "+",
             ],

@@ -5,6 +5,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Keypad
     callOperator={[MockFunction]}
+    extraOperators={Array []}
     numbers={Array []}
     operators={Array []}
     setOperator={[MockFunction]}
@@ -40,6 +41,9 @@ ShallowWrapper {
             keyValue="="
           />
         </div>,
+        <div
+          className="extraoperators-container"
+        />,
       ],
       "className": "keypad-container",
     },
@@ -97,6 +101,18 @@ ShallowWrapper {
         },
         "type": "div",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [],
+          "className": "extraoperators-container",
+        },
+        "ref": null,
+        "rendered": Array [],
+        "type": "div",
+      },
     ],
     "type": "div",
   },
@@ -122,6 +138,9 @@ ShallowWrapper {
               keyValue="="
             />
           </div>,
+          <div
+            className="extraoperators-container"
+          />,
         ],
         "className": "keypad-container",
       },
@@ -177,6 +196,18 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [],
+            "className": "extraoperators-container",
+          },
+          "ref": null,
+          "rendered": Array [],
           "type": "div",
         },
       ],

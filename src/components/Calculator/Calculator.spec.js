@@ -128,10 +128,10 @@ describe('setOperator', () => {
         expect(wrapper.state('storedValue')).toEqual('5');
     });
 
-    it('should update the value of displayValue to "0"', () => {
+    it('should update the value of displayValue to corresponding operator', () => {
         wrapper.setState({displayValue: '5'});
         wrapper.instance().setOperator('+');
-        expect(wrapper.state('displayValue')).toEqual('0');
+        expect(wrapper.state('displayValue')).toEqual('+');
     });
 
     it('selectedOperator is not an empty string, does not update storedValue', () => {
@@ -164,11 +164,11 @@ describe('callOperator', () => {
       });
     
       it('updates displayValue to the product of storedValue and displayValue', () => {
-        wrapper.setState({ storedValue: '3' });
+        wrapper.setState({ storedValue: '3.2' });
         wrapper.setState({ displayValue: '3' });
-        wrapper.setState({ selectedOperator: 'X' });
+        wrapper.setState({ selectedOperator: 'x' });
         wrapper.instance().callOperator();
-        expect(wrapper.state('displayValue')).toEqual('9');
+        expect(wrapper.state('displayValue')).toEqual('9.60');
       });
     
       it('updates displayValue to the quotient of storedValue and displayValue', () => {
@@ -176,7 +176,7 @@ describe('callOperator', () => {
         wrapper.setState({ displayValue: '2' });
         wrapper.setState({ selectedOperator: '/' });
         wrapper.instance().callOperator();
-        expect(wrapper.state('displayValue')).toEqual('1.5');
+        expect(wrapper.state('displayValue')).toEqual('1.50');
       });
     
       it('updates displayValue to "0" if operation results in "NaN"', () => {

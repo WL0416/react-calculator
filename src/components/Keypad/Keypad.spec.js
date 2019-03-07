@@ -10,6 +10,7 @@ describe('Keypad', () => {
                 callOperator = {jest.fn()}
                 numbers = {[]}
                 operators = {[]}
+                extraOperators = {[]}
                 setOperator = {jest.fn()}
                 updateDisplay = {jest.fn()}
             />
@@ -20,16 +21,17 @@ describe('Keypad', () => {
         expect(wrapper).toMatchSnapshot()
     });
 
-    it('should render four <div />s', () => {
-        expect(wrapper.find('div').length).toEqual(4);
+    it('should render five <div />s', () => {
+        expect(wrapper.find('div').length).toEqual(5);
     });
 
     it('should render the Key component', () => {
         const numbers = ['0', '1'];
         const operators = ['+', '-'];
+        const extraOperators = ['^','sr'];
         const submit = 1;
-        const keyTotal = numbers.length + operators.length + submit;
-        wrapper.setProps({numbers, operators});
+        const keyTotal = numbers.length + operators.length + submit + extraOperators.length;
+        wrapper.setProps({numbers, operators, extraOperators});
         expect(wrapper.find('Key').length).toEqual(keyTotal);
     });
 });
@@ -42,6 +44,7 @@ describe('mounted Keypad', () => {
             callOperator={jest.fn()}
             numbers={[]}
             operators={[]}
+            extraOperators={[]}
             setOperator={jest.fn()}
             updateDisplay={jest.fn()}
         />
@@ -56,5 +59,10 @@ describe('mounted Keypad', () => {
     it('should render the values of operators to the DOM', () => {
         wrapper.setProps({ operators: ['+', '-', '*', '/'] });
         expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
+    });
+
+    it('should render the values of extra operators to the Dom', () => {
+        wrapper.setProps({ extraOperators: ['^','sr'] });
+        expect(wrapper.find('.extraoperators-container').text()).toEqual('^sr');
     });
 });

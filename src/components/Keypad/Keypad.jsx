@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import './Keypad.css';
 import Key from '../Key/Key'
 
-const Keypad = ({callOperator,numbers,operators,setOperator,updateDisplay}) => {
+const Keypad = ({callOperator,numbers,operators,extraOperators,setOperator,updateDisplay}) => {
     
     const numberKeys = numbers.map(number => 
         (<Key 
@@ -23,6 +23,15 @@ const Keypad = ({callOperator,numbers,operators,setOperator,updateDisplay}) => {
         />
     ));
 
+    const extraOperatorKeys = extraOperators.map(extraOperators => (
+        <Key 
+            key={extraOperators}
+            keyAction={setOperator}
+            keyType='extra-operator-key'
+            keyValue={extraOperators}
+        />
+    ));
+
     return (
         <div className='keypad-container'>
             <div className='numbers-container'>
@@ -38,6 +47,9 @@ const Keypad = ({callOperator,numbers,operators,setOperator,updateDisplay}) => {
                     keyValue='='
                 />
             </div>
+            <div className='extraoperators-container'>
+                {extraOperatorKeys}
+            </div>
         </div>
     );
 }
@@ -46,6 +58,7 @@ Keypad.propTypes = {
     callOperator: propTypes.func.isRequired,
     numbers: propTypes.array.isRequired,
     operators: propTypes.array.isRequired,
+    extraOperators: propTypes.array.isRequired,
     setOperator: propTypes.func.isRequired,
     updateDisplay: propTypes.func.isRequired,
 }
