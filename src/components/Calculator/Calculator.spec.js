@@ -28,6 +28,7 @@ describe("Calculator", () => {
               callOperator = {wrapper.instance().callOperator}
               numbers = {wrapper.instance().state.numbers}
               operators = {wrapper.instance().state.operators}
+              extraOperators = {wrapper.instance().state.extraOperators}
               setOperator = {wrapper.instance().setOperator}
               updateDisplay = {wrapper.instance().updateDisplay}
           />

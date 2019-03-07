@@ -15,7 +15,7 @@ class Calculator extends Component {
     }
 
     callOperator = () => {
-        console.log('call operation');
+        // console.log('call operation');
 
         let {displayValue, selectedOperator, storedValue} = this.state;
 
@@ -68,11 +68,11 @@ class Calculator extends Component {
     }
 
     setOperator = value => {
-        console.log('set operation');
+        // console.log('set operation');
 
         let {displayValue, selectedOperator, storedValue} = this.state;
 
-        console.log(value);
+        // console.log(value);
 
         if(selectedOperator === '') {
             storedValue = displayValue;
@@ -87,16 +87,16 @@ class Calculator extends Component {
     }
 
     updateDisplay = value => {
-        console.log('update display');
+        // console.log('update display');
         
         let {displayValue} = this.state;
 
         if(value === '.' && displayValue.includes('.'))
             value = '';
         
-        console.log(displayValue);
-        console.log(value);
-        console.log(this.state.operators.indexOf(displayValue));
+        // console.log(displayValue);
+        // console.log(value);
+        // console.log(this.state.operators.indexOf(displayValue));
 
         if (value === 'ac') {
             displayValue = '0';
