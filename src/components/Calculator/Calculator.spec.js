@@ -28,7 +28,9 @@ describe("Calculator", () => {
               callOperator = {wrapper.instance().callOperator}
               numbers = {wrapper.instance().state.numbers}
               operators = {wrapper.instance().state.operators}
+              // Wei Li
               extraOperators = {wrapper.instance().state.extraOperators}
+              // 
               setOperator = {wrapper.instance().setOperator}
               updateDisplay = {wrapper.instance().updateDisplay}
           />
@@ -129,11 +131,13 @@ describe('setOperator', () => {
         expect(wrapper.state('storedValue')).toEqual('5');
     });
 
+    // Wei Li
     it('should update the value of displayValue to corresponding operator', () => {
         wrapper.setState({displayValue: '5'});
         wrapper.instance().setOperator('+');
         expect(wrapper.state('displayValue')).toEqual('+');
     });
+    //
 
     it('selectedOperator is not an empty string, does not update storedValue', () => {
         wrapper.setState({displayValue: '5'});
@@ -211,4 +215,21 @@ describe('callOperator', () => {
         wrapper.instance().callOperator();
         expect(wrapper.state('displayValue')).toEqual('0');
       });
+
+      // Wei Li
+      it('updates displayValue to the power of storedValue and displayValue', () => {
+        wrapper.setState({storedValue: '3'});
+        wrapper.setState({displayValue: '3'});
+        wrapper.setState({selectedOperator: '^'});
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('27');
+      });
+
+      it('updates displayValue to the squareroot of storedValue and displayValue', () => {
+        wrapper.setState({storedValue: '2'});
+        wrapper.setState({selectedOperator: 'sr'});
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('1.41');
+      });
+      // 
 });

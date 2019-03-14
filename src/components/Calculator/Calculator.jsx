@@ -9,7 +9,9 @@ class Calculator extends Component {
         displayValue: '0',
         numbers: ['7','8','9','4','5','6','1','2','3','.','0','ac'],
         operators: ['/','x','-','+'],
+        // Wei Li
         extraOperators: ['^','sr'],
+        // 
         selectedOperator: '',
         storedValue: '',
     }
@@ -21,6 +23,7 @@ class Calculator extends Component {
 
         const updateStoredValue = displayValue;
         
+        // Wei Li
         if(displayValue.includes('.'))
             displayValue = parseFloat(displayValue);
         else
@@ -30,6 +33,7 @@ class Calculator extends Component {
             storedValue = parseFloat(storedValue);
         else
             storedValue = parseInt(storedValue, 10);
+        //
 
         switch (selectedOperator) {
             case '+':
@@ -44,12 +48,14 @@ class Calculator extends Component {
             case '/':
                 displayValue = storedValue / displayValue;
                 break;
+            // Wei Li
             case '^':
                 displayValue = Math.pow(storedValue, displayValue);
                 break;
             case 'sr':
                 displayValue = Math.sqrt(storedValue);
                 break;
+            // 
             default:
                 displayValue = 0;
         }
@@ -73,7 +79,7 @@ class Calculator extends Component {
         let {displayValue, selectedOperator, storedValue} = this.state;
 
         // console.log(value);
-
+        // Wei Li
         if(selectedOperator === '') {
             storedValue = displayValue;
             displayValue = value;
@@ -82,6 +88,7 @@ class Calculator extends Component {
             selectedOperator = value;
             displayValue = selectedOperator;
         }
+        // 
 
         this.setState({displayValue, selectedOperator, storedValue});
     }
@@ -98,6 +105,7 @@ class Calculator extends Component {
         // console.log(value);
         // console.log(this.state.operators.indexOf(displayValue));
 
+        // Wei Li
         if (value === 'ac') {
             displayValue = '0';
         } else if (this.state.operators.indexOf(displayValue) !== -1 || 
@@ -107,6 +115,7 @@ class Calculator extends Component {
         } else {
             displayValue === '0' ? displayValue = value : displayValue += value;
         }
+        // 
         
         this.setState({displayValue});
     }
@@ -122,7 +131,9 @@ class Calculator extends Component {
                     callOperator={this.callOperator}
                     numbers={numbers}
                     operators={operators}
+                    // Wei Li
                     extraOperators = {extraOperators}
+                    // 
                     setOperator={this.setOperator}
                     updateDisplay={this.updateDisplay}
                 />

@@ -10,7 +10,9 @@ describe('Keypad', () => {
                 callOperator = {jest.fn()}
                 numbers = {[]}
                 operators = {[]}
+                // Wei Li
                 extraOperators = {[]}
+                //
                 setOperator = {jest.fn()}
                 updateDisplay = {jest.fn()}
             />
@@ -30,8 +32,10 @@ describe('Keypad', () => {
         const operators = ['+', '-'];
         const extraOperators = ['^','sr'];
         const submit = 1;
+        // Wei Li
         const keyTotal = numbers.length + operators.length + submit + extraOperators.length;
         wrapper.setProps({numbers, operators, extraOperators});
+        //
         expect(wrapper.find('Key').length).toEqual(keyTotal);
     });
 });
@@ -44,7 +48,9 @@ describe('mounted Keypad', () => {
             callOperator={jest.fn()}
             numbers={[]}
             operators={[]}
+            // Wei Li
             extraOperators={[]}
+            //
             setOperator={jest.fn()}
             updateDisplay={jest.fn()}
         />
@@ -61,8 +67,10 @@ describe('mounted Keypad', () => {
         expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
     });
 
+    // Wei Li
     it('should render the values of extra operators to the Dom', () => {
         wrapper.setProps({ extraOperators: ['^','sr'] });
         expect(wrapper.find('.extraoperators-container').text()).toEqual('^sr');
     });
+    // 
 });

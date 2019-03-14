@@ -22,7 +22,8 @@ const Keypad = ({callOperator,numbers,operators,extraOperators,setOperator,updat
             keyValue={operator}
         />
     ));
-
+    
+    // Wei Li
     const extraOperatorKeys = extraOperators.map(extraOperators => (
         <Key 
             key={extraOperators}
@@ -31,6 +32,7 @@ const Keypad = ({callOperator,numbers,operators,extraOperators,setOperator,updat
             keyValue={extraOperators}
         />
     ));
+    //
 
     return (
         <div className='keypad-container'>
@@ -47,9 +49,11 @@ const Keypad = ({callOperator,numbers,operators,extraOperators,setOperator,updat
                     keyValue='='
                 />
             </div>
+            {/* Wei Li */}
             <div className='extraoperators-container'>
                 {extraOperatorKeys}
             </div>
+            {/*  */}
         </div>
     );
 }
@@ -58,7 +62,9 @@ Keypad.propTypes = {
     callOperator: propTypes.func.isRequired,
     numbers: propTypes.array.isRequired,
     operators: propTypes.array.isRequired,
+    // Wei Li
     extraOperators: propTypes.array.isRequired,
+    //
     setOperator: propTypes.func.isRequired,
     updateDisplay: propTypes.func.isRequired,
 }
