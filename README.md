@@ -1,3 +1,6 @@
+![alt text](https://github.com/WL0416/react-calculator/blob/master/ScreenShot1.png)
+![alt text](https://github.com/WL0416/react-calculator/blob/master/ScreenShot2.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
